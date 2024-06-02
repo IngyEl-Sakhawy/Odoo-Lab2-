@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_course_form" model="ir.ui.view">
+            <field name="name">course.form</field>
+            <field name="model">your_module.course</field>
+            <field name="arch" type="xml">
+                <form string="Courses">
+                    <header>
+                        <button name="action_open_course" type="object" string="Open" class="oe_highlight"/>
+                        <button name="action_close_course" type="object" string="Close" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="professor_id"/>
+                            <field name="professor_email" readonly="1"/>
+                            <field name="enrollment_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_student_list" model="ir.ui.view">
+            <field name="name">student.list</field>
+            <field name="model">your_module.student</field>
+            <field name="arch" type="xml">
+                <tree string="Students">
+                    <field name="name" />
+                    <field name="email" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_student_kanban" model="ir.ui.view">
+            <field name="name">student.kanban</field>
+            <field name="model">your_module.student</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" default_group_by="stage_id">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="o_kanban_record">
+                                <strong>
+                                    <field name="name" />
+                                </strong>
+                                <div>
+                                    <field name="email" />
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_student_form" model="ir.ui.view">
+            <field name="name">student.form</field>
+            <field name="model">your_module.student</field>
+            <field name="arch" type="xml">
+                <form string="Students">
+                    <group>
+                        <field name="name" />
+                        <field name="email" />
+                        <field name="enrollment_ids" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
